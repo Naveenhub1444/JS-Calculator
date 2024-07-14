@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #000000;
+        }
+        .calculator {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            padding: 20px;
+            border: 1px solid #010101;
+            border-radius: 10px;
+            background-color: #fff;
+            box-shadow: -3px -3px 7px #ffffff73,
+                        2px 2px 5px rgba(94,104,121,0.288);
+        }
+        .calculator input {
+            grid-column: span 4;
+            padding: 10px;
+            font-size: 1.2em;
+            text-align: center;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f0f0f0;
+            color: #000000;
+        }
+        .calculator button {
+            padding: 15px;
+            font-size: 1.2em;
+            background-color: #000000;
+            border: 1px solid #000000;
+            border-radius: 5px;
+            cursor: pointer;
+            color: #ffffff;
+        }
+        .calculator button:hover {
+            background-color: #4e2f2f;
+        }
+        .calculator button:active {
+            background-color: #740707;
+        }
+        .calculator .span-2 {
+            grid-column: span 2;
+        }
+        .calculator .span-4 {
+            grid-column: span 4;
+        }
+        #display{
+            background-color: #010101;
+            color: #ebe5e5;
+            height: 40px;
+        }
+        .hea{
+            font-size: 25px;
+        }
+    </style>
+</head>
+<body>
+    <div class="hea">
+        <h2 style="color: #ccc;">Calculator</h2>
+    </div>
+    <div class="calculator">
+        <input type="text" id="display" value="Welcome" readonly>
+        <button style="background-color: #740707;" class="span-2" onclick="clearDisplay()">C</button>
+        <button class="span-2" onclick="clearLast()">CE</button>
+        <button onclick="appendToDisplay(this)">7</button>
+        <button onclick="appendToDisplay(this)">8</button>
+        <button onclick="appendToDisplay(this)">9</button>
+        <button onclick="appendToDisplay(this)">+</button>
+        <button onclick="appendToDisplay(this)">4</button>
+        <button onclick="appendToDisplay(this)">5</button>
+        <button onclick="appendToDisplay(this)">6</button>
+        <button onclick="appendToDisplay(this)">-</button>
+        <button onclick="appendToDisplay(this)">1</button>
+        <button onclick="appendToDisplay(this)">2</button>
+        <button onclick="appendToDisplay(this)">3</button>
+        <button onclick="appendToDisplay(this)">*</button>
+        <button onclick="appendToDisplay(this)">.</button>
+        <button onclick="appendToDisplay(this)">0</button>
+        <button onclick="appendToDisplay(this)">%</button>
+        <button onclick="appendToDisplay(this)">/</button>
+        <button onclick="calculateResult()" class="span-4">=</button>
+    </div>
+    <script src="calculator.js"></script>
+</body>
+</html>
